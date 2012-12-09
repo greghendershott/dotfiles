@@ -1,3 +1,8 @@
+# Racket bytecode and dependencies
+compiled/
+.zo
+.dep
+
 # Compiled Python files
 *.pyc
 
