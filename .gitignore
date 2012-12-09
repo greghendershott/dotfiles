@@ -1,3 +1,6 @@
+# ~/dotfiles/.extra
+.extra
+
 # Racket bytecode and dependencies
 compiled/
 .zo
