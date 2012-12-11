@@ -1,7 +1,14 @@
 # Make vim the default editor
 export EDITOR="emacs"
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X"
+
+# Pager for man and git
+if [[ $EMACS == "t" ]]; then
+    export MANPAGER="cat"       #less doesn't work well
+    export GIT_PAGER="cat"      #less doesn't work well
+else
+    export MANPAGER="less -X"   #don't clear screen after quitting
+fi
+
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
 
