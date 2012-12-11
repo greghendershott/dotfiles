@@ -1,0 +1,7 @@
+--type-set
+racket=.rkt
+
+--type-set
+scribble=.scrbl
+
+--pager=less -r -X
