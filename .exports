@@ -2,12 +2,16 @@
 export EDITOR="emacs"
 
 # Pager for man and git
-if [[ $EMACS == "t" ]]; then
-    export MANPAGER="cat"       #less doesn't work well
-    export GIT_PAGER="cat"      #less doesn't work well
+if [[ $EMACS == "t" ]]; then    #less doesn't work well
+    export PAGER="cat"
 else
-    export MANPAGER="less -X"   #don't clear screen after quitting
+    export PAGER="less -r -X"   #show ctrl chars
+                                #don't clear screen on exit
 fi
+
+export MANPAGER="$PAGER"
+export GIT_PAGER="$PAGER"
+export ACK_PAGER="$PAGER"
 
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
